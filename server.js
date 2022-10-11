@@ -2,11 +2,23 @@ const {soap} = require('strong-soap');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const path = require("path")
+
+const app = require('express')();
+
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
+
 // Using Soap WSDL
 const calc_url = 'http://www.dneonline.com/calculator.asmx?WSDL';
 const word_url = 'https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL';
 
-const app = require('express')();
 
 const clientPromise = new Promise((resolve, reject) => (
     soap.createClient(calc_url, {}, (err, client) => err ? reject(err) : resolve(client))
@@ -84,4 +96,4 @@ const invokeCel = ({client, requests}) => Promise.all(requests.map(request => (
     )))
 )));
 
-app.listen(4000);
+app.listen(8000);
