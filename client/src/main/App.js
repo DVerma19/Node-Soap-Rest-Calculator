@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 
 function App() {
