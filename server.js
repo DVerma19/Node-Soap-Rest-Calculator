@@ -5,6 +5,8 @@ const express = require('express');
 const path = require("path")
 
 const app = require('express')();
+const port = process.env.PORT || 8000;
+
 
 app.use(express.static(path.join(__dirname, "client", "build")))
 
@@ -96,4 +98,4 @@ const invokeCel = ({client, requests}) => Promise.all(requests.map(request => (
     )))
 )));
 
-app.listen(8000);
+app.listen(port);
