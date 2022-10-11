@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
+const port = process.env.PORT || 5000;
+
 
 function App() {
   const [num1, setNum1] = useState();
@@ -21,7 +23,7 @@ function App() {
   const getStartPage = () => {
     axios({
       method: 'get',
-      url: 'http://localhost:4000/'
+      url: `http://localhost:${port}/`
       })
     .then((response) => {
       setWelcomeMsg(response.data);
@@ -34,7 +36,7 @@ function App() {
       const body = [{"intA": num1, "intB": num2}]
       axios({
         method: 'post',
-        url: 'http://localhost:4000/add',
+        url: `http://localhost:${port}/add`,
         data: body
       })
       .then((response) => {
@@ -51,7 +53,7 @@ function App() {
       const body = [{"intA": num1, "intB": num2}]
       axios({
         method: 'post',
-        url: 'http://localhost:4000/sub',
+        url: `http://localhost:${port}/sub`,
         data: body
       })
       .then((response) => {
@@ -68,7 +70,7 @@ function App() {
       const body = [{"intA": num1, "intB": num2}]
       axios({
         method: 'post',
-        url: 'http://localhost:4000/mult',
+        url: `http://localhost:${port}/mult`,
         data: body
       })
       .then((response) => {
@@ -86,7 +88,7 @@ function App() {
 
       axios({
         method: 'post',
-        url: 'http://localhost:4000/div',
+        url: `http://localhost:${port}/div`,
         data: body
       })
       .then((response) => {
@@ -109,7 +111,7 @@ function App() {
 
         axios({
           method: 'post',
-          url: 'http://localhost:4000/word',
+          url: `http://localhost:${port}/word`,
           data: body
         })
         .then((response) => {
