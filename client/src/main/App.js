@@ -23,7 +23,7 @@ function App() {
   const getStartPage = () => {
     axios({
       method: 'get',
-      url: `https://node-soap-dhruv.herokuapp.com:/`
+      url: `https://node-soap-dhruv.herokuapp.com/`
       })
     .then((response) => {
       setWelcomeMsg(response.data);
