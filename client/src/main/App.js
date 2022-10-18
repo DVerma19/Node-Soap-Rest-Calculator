@@ -21,14 +21,9 @@ function App() {
   }
 
   const getStartPage = () => {
-    axios({
-      method: 'get',
-      url: `https://node-soap-dhruv.herokuapp.com/welcome`
-      })
-    .then((response) => {
-      console.log(response.data);
-    });
-  }
+   setWelcomeMsg('Welcome to the calculator')
+   }
+
   const addReq = () => {
     
     if(!num1 || !num2){ alert ("Numbers cannot be empty");}
