@@ -26,7 +26,7 @@ function App() {
       url: `https://node-soap-dhruv.herokuapp.com/`
       })
     .then((response) => {
-      setWelcomeMsg(response.data);
+      console.log(response.data);
     });
   }
   const addReq = () => {
