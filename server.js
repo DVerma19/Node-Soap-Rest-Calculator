@@ -34,7 +34,7 @@ app.use(bodyParser.json())
 app.use(cors());
 
 // Rest Apis
-app.get('/', (req, res) => {
+app.get('/welcome', (req, res) => {
     res.status(200).send('Welcome to a Simple SOAP and REST Service');
 });
 
