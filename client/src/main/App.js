@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
-const port = process.env.PORT || 8000;
+//const port = process.env.PORT || 8000;
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
   const getStartPage = () => {
     axios({
       method: 'get',
-      url: `https://node-soap-dhruv.herokuapp.com:${port}/`
+      url: `https://node-soap-dhruv.herokuapp.com:/`
       })
     .then((response) => {
       setWelcomeMsg(response.data);
@@ -36,7 +36,7 @@ function App() {
       const body = [{"intA": num1, "intB": num2}]
       axios({
         method: 'post',
-        url: `https://node-soap-dhruv.herokuapp.com:${port}/add`,
+        url: `https://node-soap-dhruv.herokuapp.com/add`,
         data: body
       })
       .then((response) => {
@@ -53,7 +53,7 @@ function App() {
       const body = [{"intA": num1, "intB": num2}]
       axios({
         method: 'post',
-        url: `https://node-soap-dhruv.herokuapp.com:${port}/sub`,
+        url: `https://node-soap-dhruv.herokuapp.com/sub`,
         data: body
       })
       .then((response) => {
@@ -70,7 +70,7 @@ function App() {
       const body = [{"intA": num1, "intB": num2}]
       axios({
         method: 'post',
-        url: `https://node-soap-dhruv.herokuapp.com:${port}/mult`,
+        url: `https://node-soap-dhruv.herokuapp.com/mult`,
         data: body
       })
       .then((response) => {
@@ -88,7 +88,7 @@ function App() {
 
       axios({
         method: 'post',
-        url: `https://node-soap-dhruv.herokuapp.com:${port}/div`,
+        url: `https://node-soap-dhruv.herokuapp.com/div`,
         data: body
       })
       .then((response) => {
@@ -111,7 +111,7 @@ function App() {
 
         axios({
           method: 'post',
-          url: `https://node-soap-dhruv.herokuapp.com:${port}/word`,
+          url: `https://node-soap-dhruv.herokuapp.com/word`,
           data: body
         })
         .then((response) => {
